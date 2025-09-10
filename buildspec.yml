@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build complete
+  post_build:
+    commands:
+      - echo Starting app
+      - pm2 start index.js || true
+
+artifacts:
+  files:
+    - '**/*'
+
